@@ -1,7 +1,6 @@
 package com.andreidornea.bibleapp
 
 import com.andreidornea.bibleapp.utils.BASE_URL
-import com.google.firebase.appdistribution.gradle.ApiService
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

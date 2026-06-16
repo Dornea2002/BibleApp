@@ -1,0 +1,30 @@
+`out/soong/.intermediates/prebuilts/sdk/current/aaos-libs/oem-token-lib-source/android_common/aapt2/reszip/gen_res.flata/values/styles1.xml:249: error: resource com.android.oem.tokens:attr/colorBackground not found.
+out/soong/.intermediates/prebuilts/sdk/current/aaos-libs/oem-token-lib-source/android_common/aapt2/reszip/gen_res.flata/values/styles1.xml:269: error: resource com.android.oem.tokens:attr/colorBlue not found.
+out/soong/.intermediates/prebuilts/sdk/current/aaos-libs/oem-token-lib-source/android_common/aapt2/reszip/gen_res.flata/values/styles1.xml:271: error: resource com.android.oem.tokens:attr/colorBlueContainer not found.
+out/soong/.intermediates/prebuilts/sdk/current/aaos-libs/oem-token-lib-source/android_common/aapt2/reszip/gen_res.flata/values/styles1.xml:245: error: resource com.android.oem.tokens:attr/colorError not found.
+out/soong/.intermediates/prebuilts/sdk/current/aaos-libs/oem-token-lib-source/android_common/aapt2/reszip/gen_res.flata/values/styles1.xml:247: error: resource com.android.oem.tokens:attr/colorErrorContainer not found.
+out/soong/.intermediates/prebuilts/sdk/current/aaos-libs/oem-token-lib-source/android_common/aapt2/reszip/gen_res.flata/values/styles1.xml:336: error: resource com.android.oem.tokens:attr/colorErrorPalette0 not found.
+out/soong/.intermediates/prebuilts/sdk/current/aaos-libs/oem-token-lib-source/android_common/aapt2/reszip/gen_res.flata/values/styles1.xml:335: error: resource com.android.oem.tokens:attr/colorErrorPalette10 not found.
+out/soong/.intermediates/prebuilts/sdk/current/aaos-libs/oem-token-lib-source/android_common/aapt2/reszip/gen_res.flata/values/styles1.xml:324: error: resource com.android.oem.tokens:attr/colorErrorPalette100 not found.
+out/soong/.intermediates/prebuilts/sdk/current/aaos-libs/oem-token-lib-source/android_common/aapt2/reszip/gen_res.flata/values/styles1.xml:334: error: resource com.android.oem.tokens:attr/colorErrorPalette20 not found.
+out/soong/.intermediates/prebuilts/sdk/current/aaos-libs/oem-token-lib-source/android_common/aapt2/reszip/gen_res.flata/values/styles1.xml:333: error: resource com.android.oem.tokens:attr/colorErrorPalette30 not found.
+out/soong/.intermediates/prebuilts/sdk/current/aaos-libs/oem-token-lib-source/android_common/aapt2/reszip/gen_res.flata/values/styles1.xml:332: error: resource com.android.oem.tokens:attr/colorErrorPalette40 not found.
+out/soong/.intermediates/prebuilts/sdk/current/aaos-libs/oem-token-lib-source/android_common/aapt2/reszip/gen_res.flata/values/styles1.xml:331: error: resource com.android.oem.tokens:attr/colorErrorPalette50 not found.
+out/soong/.intermediates/prebuilts/sdk/current/aaos-libs/oem-token-lib-source/android_common/aapt2/reszip/gen_res.flata/values/styles1.xml:330: error: resource com.android.oem.tokens:attr/colorErrorPalette60 not found.
+out/soong/.intermediates/prebuilts/sdk/current/aaos-libs/oem-token-lib-source/android_common/aapt2/reszip/gen_res.flata/values/styles1.xml:329: error: resource com.android.oem.tokens:attr/colorErrorPalette70 not found.
+out/soong/.intermediates/prebuilts/sdk/current/aaos-libs/oem-token-lib-source/android_common/aapt2/reszip/gen_res.flata/values/styles1.xml:328: error: resource com.android.oem.tokens:attr/colorErrorPalette80 not found.
+out/soong/.intermediates/prebuilts/sdk/current/aaos-libs/oem-token-lib-source/android_common/aapt2/reszip/gen_res.flata/values/styles1.xml:327: error: resource com.android.oem.tokens:attr/colorErrorPalette90 not found.
+out/soong/.intermediates/prebuilts/sdk/current/aaos-libs/oem-token-lib-source/android_common/aapt2/reszip/gen_res.flata/values/styles1.xml:326: error: resource com.android.oem.tokens:attr/colorErrorPalette95 not found.
+out/soong/.intermediates/prebuilts/sdk/current/aaos-libs/oem-token-lib-source/android_common/aapt2/reszip/gen_res.flata/values/styles1.xml:325: error: resource com.android.oem.tokens:attr/colorErrorPalette99 not found.
+out/soong/.intermediates/prebuilts/sdk/current/aaos-libs/oem-token-lib-source/android_common/aapt2/reszip/gen_res.flata/values/styles1.xml:273: error: resource com.android.oem.tokens:attr/colorGreen not found.
+out/soong/.intermediates/prebuilts/sdk/current/aaos-libs/oem-token-lib-source/android_common/aapt2/reszip/gen_res.flata/values/styles1.xml:275: error: resource com.android.oem.tokens:attr/colorGreenContainer not found.
+[  2% 38/1452 10m48s remaining] //build/soong/java/core-libraries:core-public-stubs-system-modules system modules [common]
+[  2% 39/1452 10m48s remaining] //build/soong/java/core-libraries:stable-core-platform-api-stubs-system-modules system modules [common]
+[  2% 40/1452 10m48s remaining] //build/soong/java/core-libraries:legacy-core-platform-api-stubs-system-modules system modules [common]
+[  2% 41/1452 10m48s remaining] //build/soong/java/core-libraries:core-module-lib-stubs-system-modules system modules [common]
+ninja: build stopped: subcommand failed.
+14:00:08 ninja failed with: exit status 1
+[BUILD_REPORTER] Skip metrics upload
+
+#### failed to build some targets (25 seconds) ####
+`
