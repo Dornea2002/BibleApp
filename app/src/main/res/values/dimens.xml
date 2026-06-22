@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="border_thickness">10dp</dimen>
+    <dimen name="border_corner_radius">24dp</dimen>
+    <dimen name="header_icon_margin">20dp</dimen>
+    <dimen name="daily_verse_text_size">22sp</dimen>
+    <dimen name="daily_verse_text_padding">12dp</dimen>
+</resources>

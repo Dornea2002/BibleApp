@@ -2,39 +2,39 @@ package com.andreidornea.bibleapp
 
 import android.os.Bundle
 import android.util.Log
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.appcompat.app.AppCompatActivity
+import android.graphics.Color
+import androidx.core.view.WindowCompat
+import androidx.fragment.app.add
+import androidx.fragment.app.commit
 import com.andreidornea.bibleapp.model.AvailableTranslations
 import com.andreidornea.bibleapp.model.Chapter
 import com.andreidornea.bibleapp.model.TranslationBooks
-import com.andreidornea.bibleapp.ui.theme.BibleAppTheme
+import com.andreidornea.bibleapp.screen.home.HomeFragment
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MainActivity : ComponentActivity() {
+class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            BibleAppTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+
+        WindowCompat.setDecorFitsSystemWindows(window, false)
+        window.statusBarColor = Color.TRANSPARENT
+        window.navigationBarColor = Color.TRANSPARENT
+
+        setContentView(R.layout.activity_main)
+
+        if(savedInstanceState == null){
+            supportFragmentManager.commit {
+                setReorderingAllowed(true)
+                add<HomeFragment>(R.id.fragment_container_view)
             }
         }
+        testAPIs()
+    }
 
+    private fun testAPIs(){
         ApiClient.apiService.getAvailableTranslations()
             .enqueue(object : Callback<AvailableTranslations> {
                 override fun onResponse(
@@ -109,21 +109,5 @@ class MainActivity : ComponentActivity() {
                     t.printStackTrace()
                 }
             })
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    BibleAppTheme {
-        Greeting("Android")
     }
 }
