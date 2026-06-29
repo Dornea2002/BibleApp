@@ -31,24 +31,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/daily_verse_view"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintHeight_percent="0.3"
-        app:layout_constraintWidth_percent="0.85"
-        app:layout_constraintVertical_bias="0.3"
-        android:background="@drawable/daily_verse_background"
-        android:text="Noi răsturnăm izvodirile minții și orice înălțime care se ridică împotriva cunoștinței lui Dumnezeu, și orice gând îl facem rob ascultării de Hristos. \n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t2 Corinteni 10:5"
-        android:textSize="@dimen/daily_verse_text_size"
-        android:fontFamily="@font/lora_regular"
-        android:textColor="@color/text_color"
-        android:padding="@dimen/daily_verse_text_padding"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/top_container"
         android:layout_width="match_parent"
@@ -59,23 +41,40 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.1"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/greeting_text"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
             android:id="@+id/profile_icon"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_gravity="center_vertical"
             android:layout_marginStart="@dimen/header_icon_margin"
+            android:elevation="-10dp"
             android:background="@drawable/round_profile_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/profile_initials"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/header_icon_margin"
+            android:text="AD"
+            android:textColor="@color/primary"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:background="@color/transparent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
             android:id="@+id/menu_icon"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_gravity="center_vertical"
             android:layout_marginEnd="@dimen/header_icon_margin"
             android:background="@drawable/menu_icon"
@@ -84,5 +83,64 @@
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <TextView
+        android:id="@+id/greeting_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintWidth_percent="0.85"
+        app:layout_constraintVertical_bias="0.25"
+        android:background="@color/transparent"
+        android:text="Good evening, Andrei!"
+        android:textSize="18sp"
+        android:layout_marginVertical="10dp"
+        android:fontFamily="@font/lora_regular"
+        android:textColor="@color/text_color"
+        app:layout_constraintTop_toBottomOf="@id/top_container"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/daily_verse_view"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/daily_verse_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintWidth_percent="0.85"
+        android:background="@drawable/daily_verse_background"
+        android:padding="@dimen/daily_verse_text_padding"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/greeting_text" >
+
+        <TextView
+            android:id="@+id/daily_verse_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Noi răsturnăm izvodirile minții și orice înălțime care se ridică împotriva cunoștinței lui Dumnezeu, și orice gând îl facem rob ascultării de Hristos."
+            android:textSize="@dimen/daily_verse_text_size"
+            android:fontFamily="@font/lora_regular"
+            android:textColor="@color/text_color"
+            app:layout_constraintBottom_toTopOf="@id/daily_verse_reference"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/daily_verse_reference"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2 Corinteni 10:5"
+            android:textSize="@dimen/daily_verse_text_size"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/lora_regular"
+            android:textColor="@color/text_color"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/daily_verse_text" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

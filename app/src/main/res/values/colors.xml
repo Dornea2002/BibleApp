@@ -2,6 +2,7 @@
 <resources>
     <color name="primary">#FFFFFF</color>
     <color name="text_color">#000000</color>
+    <color name="icon_color">#000000</color>
     <color name="secondary">#AEC8CD</color>
     <color name="tertiary">#C8DCE0</color>
     <color name="alpha_tertiary">#CDC8DCE0</color>
