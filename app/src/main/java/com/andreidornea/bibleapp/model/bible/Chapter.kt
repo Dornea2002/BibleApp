@@ -1,4 +1,4 @@
-package com.andreidornea.bibleapp.model
+package com.andreidornea.bibleapp.model.bible
 
 import com.google.gson.annotations.SerializedName
 

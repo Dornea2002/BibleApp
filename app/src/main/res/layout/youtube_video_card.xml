@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/video_card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="15dp"
+    android:background="@color/transparent"
+    app:cardCornerRadius="@dimen/border_corner_radius"
+    app:cardElevation="6dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="@color/secondary"
+        android:layout_height="125dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/text_container"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:padding="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/video_thumbnail"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.6">
+
+            <TextView
+                android:id="@+id/video_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="The ultimate video that will blow your mind"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/channel_name"
+                android:textStyle="bold"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/channel_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/video_title"
+                android:text="BestChannelSoFar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textStyle="bold"
+                android:textSize="18sp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/video_thumbnail"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="15dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/thumbnail_placeholder"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/text_container"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.3" />
+
+        <ImageView
+            android:id="@+id/play_icon"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/video_icon"
+            app:layout_constraintBottom_toBottomOf="@id/video_thumbnail"
+            app:layout_constraintEnd_toEndOf="@id/video_thumbnail"
+            app:layout_constraintStart_toStartOf="@id/video_thumbnail"
+            app:layout_constraintTop_toTopOf="@id/video_thumbnail"
+            app:layout_constraintWidth_percent="0.125" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="125dp">
+
+            <ImageView
+                android:id="@+id/video_thumbnail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop" />
+
+            <ImageView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_gravity="center"
+                android:src="@drawable/play_video_icon" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/video_title"
+                android:textStyle="bold"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/video_title"
+                android:textStyle="bold"
+                android:textSize="18sp" />
+        </LinearLayout>-->
+
+</com.google.android.material.card.MaterialCardView>

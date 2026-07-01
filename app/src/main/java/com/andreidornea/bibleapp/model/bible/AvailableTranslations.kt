@@ -1,4 +1,4 @@
-package com.andreidornea.bibleapp.model
+package com.andreidornea.bibleapp.model.bible
 
 data class AvailableTranslations(
     val translations: List<Translation>

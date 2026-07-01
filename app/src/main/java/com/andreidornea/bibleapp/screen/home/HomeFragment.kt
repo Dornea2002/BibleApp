@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.andreidornea.bibleapp.R
 import com.andreidornea.bibleapp.databinding.HomeFragmentBinding
+import com.andreidornea.bibleapp.model.YoutubeVideo
+import com.andreidornea.bibleapp.ui.widget.YoutubeVideoWidget
 
 class HomeFragment : Fragment(R.layout.home_fragment) {
 
@@ -37,6 +39,14 @@ class HomeFragment : Fragment(R.layout.home_fragment) {
         binding.dailyVerseReference.apply {
             text = "Ioan 3:16"
         }
+
+        val videp = YoutubeVideo(
+            "hk2kzCj1L6w",
+            "The Story of David",
+            "BibleProject"
+        )
+
+        YoutubeVideoWidget.bind(this, binding.youtubeVideoWidget, videp)
     }
 
     override fun onDestroy() {

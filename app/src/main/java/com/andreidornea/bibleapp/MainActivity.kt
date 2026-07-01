@@ -7,9 +7,9 @@ import android.graphics.Color
 import androidx.core.view.WindowCompat
 import androidx.fragment.app.add
 import androidx.fragment.app.commit
-import com.andreidornea.bibleapp.model.AvailableTranslations
-import com.andreidornea.bibleapp.model.Chapter
-import com.andreidornea.bibleapp.model.TranslationBooks
+import com.andreidornea.bibleapp.model.bible.AvailableTranslations
+import com.andreidornea.bibleapp.model.bible.Chapter
+import com.andreidornea.bibleapp.model.bible.TranslationBooks
 import com.andreidornea.bibleapp.screen.home.HomeFragment
 import retrofit2.Call
 import retrofit2.Callback
