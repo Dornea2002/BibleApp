@@ -13,6 +13,7 @@ import com.andreidornea.bibleapp.model.bible.Chapter
 import com.andreidornea.bibleapp.model.bible.TranslationBooks
 import com.andreidornea.bibleapp.model.widget.DailyVerse
 import com.andreidornea.bibleapp.screen.home.HomeFragment
+import com.google.firebase.firestore.FirebaseFirestore
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -28,6 +29,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 //        testAPIs()
+
+        val db = FirebaseFirestore.getInstance()
+
+        db.app.options.projectId?.let { Log.d("Firestore", it) }
 
         if(savedInstanceState == null){
             supportFragmentManager.commit {

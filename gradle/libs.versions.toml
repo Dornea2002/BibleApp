@@ -2,6 +2,7 @@
 agp = "8.10.1"
 converterGson = "3.0.0"
 kotlin = "2.0.21"
+gms = "4.5.0"
 coreKtx = "1.18.0"
 junit = "4.13.2"
 junitVersion = "1.3.0"
@@ -10,13 +11,14 @@ lifecycleRuntimeKtx = "2.10.0"
 activityCompose = "1.13.0"
 composeBom = "2024.09.00"
 retrofit = "3.0.0"
-firebaseAppdistributionGradle = "5.2.1"
 fragment = "1.8.9"
 appCompat = "1.7.1"
 constraintlayout = "2.2.1"
 material = "1.14.0"
 glide = "5.0.7"
 compiler = "5.0.7"
+firestore = "25.1.4"
+bom = "34.0.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -35,15 +37,17 @@ androidx-compose-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-
 androidx-compose-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
-firebase-appdistribution-gradle = { group = "com.google.firebase", name = "firebase-appdistribution-gradle", version.ref = "firebaseAppdistributionGradle" }
 androidx-fragment = {group = "androidx.fragment", name = "fragment-ktx", version.ref = "fragment"}
 androidx-appcompat = {group = "androidx.appcompat", name = "appcompat", version.ref = "appCompat"}
 androidx-constraintlayout = {group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout"}
 android-material = {group = "com.google.android.material", name = "material", version.ref = "material"}
 github-bumptech = {group = "com.github.bumptech.glide", name = "glide", version.ref = "glide"}
 github-bumptech-compiler = {group = "com.github.bumptech.glide", name = "compiler", version.ref = "compiler"}
+google-firebase = {group = "com.google.firebase", name = "firebase-firestore-ktx", version.ref = "firestore"}
+google-firebase-bom = {group = "com.google.firebase", name = "firebase-bom", version.ref = "bom"}
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+google-gms-services = { id = "com.google.gms.google-services", version.ref = "gms" }
 
