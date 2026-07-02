@@ -7,9 +7,11 @@ import android.graphics.Color
 import androidx.core.view.WindowCompat
 import androidx.fragment.app.add
 import androidx.fragment.app.commit
+import com.andreidornea.bibleapp.api.ApiClient
 import com.andreidornea.bibleapp.model.bible.AvailableTranslations
 import com.andreidornea.bibleapp.model.bible.Chapter
 import com.andreidornea.bibleapp.model.bible.TranslationBooks
+import com.andreidornea.bibleapp.model.widget.DailyVerse
 import com.andreidornea.bibleapp.screen.home.HomeFragment
 import retrofit2.Call
 import retrofit2.Callback
@@ -25,17 +27,18 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_main)
 
+//        testAPIs()
+
         if(savedInstanceState == null){
             supportFragmentManager.commit {
                 setReorderingAllowed(true)
                 add<HomeFragment>(R.id.fragment_container_view)
             }
         }
-        testAPIs()
     }
 
     private fun testAPIs(){
-        ApiClient.apiService.getAvailableTranslations()
+        ApiClient.bibleApiService.getAvailableTranslations()
             .enqueue(object : Callback<AvailableTranslations> {
                 override fun onResponse(
                     call: Call<AvailableTranslations?>,
@@ -59,7 +62,7 @@ class MainActivity : AppCompatActivity() {
                 }
             })
 
-        ApiClient.apiService.getBookListByTranslation("BSB")
+        ApiClient.bibleApiService.getBookListByTranslation("BSB")
             .enqueue(object : Callback<TranslationBooks> {
                 override fun onResponse(
                     call: Call<TranslationBooks?>,
@@ -82,7 +85,7 @@ class MainActivity : AppCompatActivity() {
                     t.printStackTrace()
                 }
             })
-        ApiClient.apiService.getChapterByBookTranslation("BSB", "GEN", "1")
+        ApiClient.bibleApiService.getChapterByBookTranslation("BSB", "GEN", "1")
             .enqueue(object : Callback<Chapter> {
                 override fun onResponse(
                     call: Call<Chapter?>,

@@ -100,47 +100,16 @@
         app:layout_constraintVertical_bias="0.25"
         app:layout_constraintWidth_percent="0.85" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/daily_verse_view"
+    <include
+        android:id="@+id/daily_verse_widget"
+        layout="@layout/daily_verse_card"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:background="@drawable/daily_verse_background"
-        android:padding="@dimen/daily_verse_text_padding"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/greeting_text"
-        app:layout_constraintWidth_percent="0.85">
-
-        <TextView
-            android:id="@+id/daily_verse_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/lora_regular"
-            android:text="Noi răsturnăm izvodirile minții și orice înălțime care se ridică împotriva cunoștinței lui Dumnezeu, și orice gând îl facem rob ascultării de Hristos."
-            android:textColor="@color/text_color"
-            android:textSize="@dimen/daily_verse_text_size"
-            app:layout_constraintBottom_toTopOf="@id/daily_verse_reference"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/daily_verse_reference"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:fontFamily="@font/lora_regular"
-            android:text="2 Corinteni 10:5"
-            android:textColor="@color/text_color"
-            android:textSize="@dimen/daily_verse_text_size"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/daily_verse_text" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintWidth_percent="0.85" />
 
     <include
         android:id="@+id/youtube_video_widget"
@@ -150,7 +119,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/daily_verse_view"
+        app:layout_constraintTop_toBottomOf="@id/daily_verse_widget"
         app:layout_constraintWidth_percent="0.85" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

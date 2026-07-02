@@ -5,7 +5,7 @@ import android.net.Uri
 import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
 import com.andreidornea.bibleapp.databinding.YoutubeVideoCardBinding
-import com.andreidornea.bibleapp.model.YoutubeVideo
+import com.andreidornea.bibleapp.model.widget.YoutubeVideo
 import com.bumptech.glide.Glide
 
 object YoutubeVideoWidget {

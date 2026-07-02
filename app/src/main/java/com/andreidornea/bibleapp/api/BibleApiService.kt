@@ -1,4 +1,4 @@
-package com.andreidornea.bibleapp
+package com.andreidornea.bibleapp.api
 
 import com.andreidornea.bibleapp.model.bible.AvailableTranslations
 import com.andreidornea.bibleapp.model.bible.Chapter
@@ -7,7 +7,7 @@ import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
 
-interface ApiService{
+interface BibleApiService {
     @GET("api/available_translations.json")
     fun getAvailableTranslations(): Call<AvailableTranslations>
 
@@ -19,5 +19,5 @@ interface ApiService{
         @Path("translation") translation: String,
         @Path("book") book: String,
         @Path("chapter") chapter: String,
-        ): Call<Chapter>
+    ): Call<Chapter>
 }

@@ -1,4 +1,4 @@
-package com.andreidornea.bibleapp.model
+package com.andreidornea.bibleapp.model.widget
 
 data class YoutubeVideo (
     val id: String,
