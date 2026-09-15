@@ -1,4 +1,4 @@
-package com.andreidornea.bibleapp.api
+package com.andreidornea.bibleapp.api.service
 
 import com.andreidornea.bibleapp.model.bible.AvailableTranslations
 import com.andreidornea.bibleapp.model.bible.Chapter

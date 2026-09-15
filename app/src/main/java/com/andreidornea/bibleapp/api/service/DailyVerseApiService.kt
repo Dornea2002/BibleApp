@@ -1,7 +1,6 @@
-package com.andreidornea.bibleapp.api
+package com.andreidornea.bibleapp.api.service
 
 import com.andreidornea.bibleapp.model.widget.DailyVerse
-import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
 

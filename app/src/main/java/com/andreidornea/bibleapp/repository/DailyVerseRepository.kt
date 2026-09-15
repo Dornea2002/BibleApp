@@ -1,6 +1,6 @@
 package com.andreidornea.bibleapp.repository
 
-import com.andreidornea.bibleapp.api.DailyVerseApiService
+import com.andreidornea.bibleapp.api.service.DailyVerseApiService
 import com.andreidornea.bibleapp.model.widget.DailyVerse
 
 class DailyVerseRepository(

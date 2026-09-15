@@ -1,10 +1,9 @@
 import re
 from urllib.parse import urlparse, parse_qs
+from pathlib import Path
 
 import firebase_admin
-from firebase_admin import credentials
-from firebase_admin import firestore
-from pathlib import Path
+from firebase_admin import credentials, firestore
 
 
 # ============================================================
@@ -39,6 +38,7 @@ def extract_video_id(url: str):
 
     # Thumbnail URLs
     match = re.search(r"/vi/([A-Za-z0-9_-]{11})/", url)
+
     if match:
         return match.group(1)
 
@@ -71,6 +71,29 @@ def extract_video_id(url: str):
 
 
 # ============================================================
+# GET NEXT ORDER
+# ============================================================
+
+def get_next_order(category_ref):
+    documents = (
+        db.collection("video")
+        .where("category", "==", category_ref)
+        .stream()
+    )
+
+    max_order = 0
+
+    for document in documents:
+        data = document.to_dict()
+        current_order = data.get("order")
+
+        if isinstance(current_order, int):
+            max_order = max(max_order, current_order)
+
+    return max_order + 1
+
+
+# ============================================================
 # MAIN
 # ============================================================
 
@@ -78,20 +101,26 @@ print("Firestore YouTube Uploader")
 print("--------------------------")
 
 while True:
-    category = input("Category (video/music/sermon/podcast): ").strip().lower()
+    category = input(
+        "Category (video/music/sermon/podcast): "
+    ).strip().lower()
 
     if category in CATEGORY_IDS:
         break
 
     print("Invalid category.\n")
 
-category_ref = db.collection("widgetCategory").document(
-    CATEGORY_IDS[category]
+
+category_ref = (
+    db.collection("widgetCategory")
+    .document(CATEGORY_IDS[category])
 )
+
 
 print()
 print("Paste YouTube links (one per line).")
 print("Press ENTER on an empty line when finished.\n")
+
 
 urls = []
 
@@ -103,6 +132,22 @@ while True:
 
     urls.append(line)
 
+
+# ============================================================
+# DETERMINE STARTING ORDER
+# ============================================================
+
+next_order = get_next_order(category_ref)
+
+print(
+    f"\nNext order for '{category}': {next_order}"
+)
+
+
+# ============================================================
+# UPLOAD
+# ============================================================
+
 seen = set()
 
 uploaded = 0
@@ -110,7 +155,9 @@ already_exists = 0
 duplicates = 0
 invalid = 0
 
+
 print("\nUploading...\n")
+
 
 for url in urls:
 
@@ -118,33 +165,75 @@ for url in urls:
 
     if video_id is None:
         invalid += 1
+
         print(f"❌ Invalid URL: {url}")
+
         continue
+
+
+    # --------------------------------------------------------
+    # DUPLICATE URL IN CURRENT INPUT
+    # --------------------------------------------------------
 
     if video_id in seen:
         duplicates += 1
+
+        print(
+            f"⏭ Duplicate in input: {video_id}"
+        )
+
         continue
 
     seen.add(video_id)
 
+
+    # --------------------------------------------------------
+    # CHECK IF VIDEO ALREADY EXISTS
+    # --------------------------------------------------------
+
     doc = db.collection("video").document(video_id)
 
     if doc.get().exists:
+
         already_exists += 1
-        print(f"⏭ Already exists: {video_id}")
+
+        print(
+            f"⏭ Already exists: {video_id}"
+        )
+
         continue
+
+
+    # --------------------------------------------------------
+    # CREATE DOCUMENT
+    # --------------------------------------------------------
 
     doc.set({
         "videoID": video_id,
-        "category": category_ref
+        "category": category_ref,
+        "order": next_order
     })
 
+
     uploaded += 1
-    print(f"✅ Uploaded: {video_id}")
+
+    print(
+        f"✅ Uploaded: {video_id} "
+        f"(order={next_order})"
+    )
+
+
+    next_order += 1
+
+
+# ============================================================
+# SUMMARY
+# ============================================================
 
 print("\n==============================")
 print("Finished")
 print("==============================")
+
 print(f"Category: {category}")
 print(f"Uploaded: {uploaded}")
 print(f"Already existed: {already_exists}")

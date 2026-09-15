@@ -29,7 +29,7 @@ object YoutubeVideoWidget {
 
             val webIntent = Intent(
                 Intent.ACTION_VIEW,
-                "https://www.youtube.com/watch?v=\${video.id}".toUri()
+                "https://www.youtube.com/watch?v=${video.id}".toUri()
             )
 
             try {
