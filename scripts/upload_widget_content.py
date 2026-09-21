@@ -76,7 +76,7 @@ def extract_video_id(url: str):
 
 def get_next_order(category_ref):
     documents = (
-        db.collection("video")
+        db.collection("metadata")
         .where("category", "==", category_ref)
         .stream()
     )
@@ -97,8 +97,8 @@ def get_next_order(category_ref):
 # MAIN
 # ============================================================
 
-print("Firestore YouTube Uploader")
-print("--------------------------")
+print("Firestore Metadata YouTube Uploader")
+print("-----------------------------------")
 
 while True:
     category = input(
@@ -161,9 +161,9 @@ print("\nUploading...\n")
 
 for url in urls:
 
-    video_id = extract_video_id(url)
+    metadata_id = extract_video_id(url)
 
-    if video_id is None:
+    if metadata_id is None:
         invalid += 1
 
         print(f"❌ Invalid URL: {url}")
@@ -175,30 +175,30 @@ for url in urls:
     # DUPLICATE URL IN CURRENT INPUT
     # --------------------------------------------------------
 
-    if video_id in seen:
+    if metadata_id in seen:
         duplicates += 1
 
         print(
-            f"⏭ Duplicate in input: {video_id}"
+            f"⏭ Duplicate in input: {metadata_id}"
         )
 
         continue
 
-    seen.add(video_id)
+    seen.add(metadata_id)
 
 
     # --------------------------------------------------------
-    # CHECK IF VIDEO ALREADY EXISTS
+    # CHECK IF METADATA ALREADY EXISTS
     # --------------------------------------------------------
 
-    doc = db.collection("video").document(video_id)
+    doc = db.collection("metadata").document(metadata_id)
 
     if doc.get().exists:
 
         already_exists += 1
 
         print(
-            f"⏭ Already exists: {video_id}"
+            f"⏭ Already exists: {metadata_id}"
         )
 
         continue
@@ -209,7 +209,7 @@ for url in urls:
     # --------------------------------------------------------
 
     doc.set({
-        "videoID": video_id,
+        "metadataID": metadata_id,
         "category": category_ref,
         "order": next_order
     })
@@ -218,7 +218,7 @@ for url in urls:
     uploaded += 1
 
     print(
-        f"✅ Uploaded: {video_id} "
+        f"✅ Uploaded: {metadata_id} "
         f"(order={next_order})"
     )
 

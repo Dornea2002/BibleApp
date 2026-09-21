@@ -2,7 +2,7 @@ package com.andreidornea.bibleapp.api
 
 import com.andreidornea.bibleapp.api.service.BibleApiService
 import com.andreidornea.bibleapp.api.service.DailyVerseApiService
-import com.andreidornea.bibleapp.api.service.YoutubeApiService
+import com.andreidornea.bibleapp.api.service.YoutubeMetadataApiService
 import com.andreidornea.bibleapp.utils.BIBLE_BASE_URL
 import com.andreidornea.bibleapp.utils.DAILY_VERSE_BASE_URL
 import com.andreidornea.bibleapp.utils.YOUTUBE_BASE_URL
@@ -42,7 +42,7 @@ object ApiClient {
         RetrofitClient.retrofitDailyVerse.create(DailyVerseApiService::class.java)
     }
 
-    val youtubeApiService: YoutubeApiService by lazy {
-        RetrofitClient.retrofitYoutube.create(YoutubeApiService::class.java)
+    val youtubeApiService: YoutubeMetadataApiService by lazy {
+        RetrofitClient.retrofitYoutube.create(YoutubeMetadataApiService::class.java)
     }
 }

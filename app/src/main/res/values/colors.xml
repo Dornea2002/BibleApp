@@ -1,12 +1,39 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primary">#FFFFFF</color>
-    <color name="text_color">#000000</color>
-    <color name="icon_color">#000000</color>
-    <color name="secondary">#AEC8CD</color>
-    <color name="tertiary">#C8DCE0</color>
-    <color name="alpha_tertiary">#CDC8DCE0</color>
-    <color name="on_primary">#fbf2e5</color>
-    <color name="on_secondary">#f7ede1</color>
+    <!-- Background / surfaces -->
+    <color name="primary">#F7F1E5</color>
+    <color name="secondary">#AAD8CBB5</color>
+    <color name="tertiary">#E8DECC</color>
+
+    <!-- Text / icons -->
+    <color name="text_color">#2F3026</color>
+    <color name="icon_color">#3F4633</color>
+
+    <!-- Accent -->
+    <color name="button_color">#6B705C</color>
+    <color name="button_color_dark">#4F553F</color>
+
+    <!-- Brown / earth -->
+    <color name="brown">#795548</color>
+    <color name="earth">#8A6A4A</color>
+
+    <!-- Text on surfaces -->
+    <color name="on_primary">#3A3328</color>
+    <color name="on_secondary">#443B30</color>
+
     <color name="transparent">#00000000</color>
 </resources>
+
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<resources>-->
+<!--    <color name="primary">#FFFFFF</color>-->
+<!--    <color name="text_color">#000000</color>-->
+<!--    <color name="icon_color">#000000</color>-->
+<!--    <color name="secondary">#AEC8CD</color>-->
+<!--    <color name="secondary_alpha">#AAAEC8CD</color>-->
+<!--    <color name="tertiary">#C8DCE0</color>-->
+<!--    <color name="alpha_tertiary">#CDC8DCE0</color>-->
+<!--    <color name="on_primary">#fbf2e5</color>-->
+<!--    <color name="on_secondary">#f7ede1</color>-->
+<!--    <color name="transparent">#00000000</color>-->
+<!--</resources>-->

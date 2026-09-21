@@ -49,7 +49,7 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_gravity="center_vertical"
-            android:layout_marginStart="@dimen/header_icon_margin"
+            android:layout_marginStart="@dimen/view_margin"
             android:background="@drawable/round_profile_button"
             android:elevation="-10dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -61,7 +61,7 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_gravity="center_vertical"
-            android:layout_marginStart="@dimen/header_icon_margin"
+            android:layout_marginStart="@dimen/view_margin"
             android:background="@color/transparent"
             android:gravity="center"
             android:text="AD"
@@ -76,7 +76,7 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_gravity="center_vertical"
-            android:layout_marginEnd="@dimen/header_icon_margin"
+            android:layout_marginEnd="@dimen/view_margin"
             android:background="@drawable/menu_icon"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -93,14 +93,26 @@
         android:text="Good evening, Andrei!"
         android:textColor="@color/text_color"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@id/daily_verse_view"
+        app:layout_constraintBottom_toTopOf="@id/widgets_recycler_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/top_container"
         app:layout_constraintVertical_bias="0.25"
         app:layout_constraintWidth_percent="0.85" />
 
-    <include
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/widgets_recycler_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/view_margin"
+        app:layout_constraintWidth_percent="0.85"
+        app:layout_constraintTop_toBottomOf="@id/greeting_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+<!--    <include
         android:id="@+id/daily_verse_widget"
         layout="@layout/daily_verse_card"
         android:layout_width="0dp"
@@ -112,14 +124,25 @@
         app:layout_constraintWidth_percent="0.85" />
 
     <include
-        android:id="@+id/youtube_video_widget"
-        layout="@layout/youtube_video_card"
+        android:id="@+id/music_widget"
+        layout="@layout/youtube_metadata_card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/sermon_widget"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/daily_verse_widget"
+        app:layout_constraintWidth_percent="0.85" />
+
+    <include
+        android:id="@+id/sermon_widget"
+        layout="@layout/youtube_metadata_card"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/daily_verse_widget"
-        app:layout_constraintWidth_percent="0.85" />
+        app:layout_constraintTop_toBottomOf="@id/music_widget"
+        app:layout_constraintWidth_percent="0.85" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

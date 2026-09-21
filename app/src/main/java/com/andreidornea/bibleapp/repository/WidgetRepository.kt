@@ -13,7 +13,7 @@ class WidgetRepository(
 
     companion object {
         private val TAG =
-            WidgetRepository.Companion::class.java.canonicalName
+            Companion::class.java.canonicalName
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -27,7 +27,7 @@ class WidgetRepository(
             .document(categoryID)
 
         val snapshot = firestore
-            .collection("video")
+            .collection("metadata")
             .whereEqualTo("category", dataCategory)
             .get()
             .await()
@@ -40,7 +40,7 @@ class WidgetRepository(
         val metadata = snapshot.documents
             .mapNotNull { document ->
                 val metadatID =
-                    document.getString("videoID")
+                    document.getString("metadataID")
                 val order =
                     document.getDouble("order")?.toInt()
                 if(metadatID == null || order == null){

@@ -4,23 +4,22 @@
     android:id="@+id/video_card"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="15dp"
-    android:background="@color/transparent"
-    app:cardCornerRadius="@dimen/border_corner_radius"
-    app:cardElevation="6dp">
+    android:layout_margin="@dimen/card_margin"
+    app:cardElevation="6dp"
+    app:cardCornerRadius="@dimen/border_corner_radius">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:background="@drawable/daily_verse_background"
         android:layout_height="wrap_content"
-        android:paddingTop="15dp"
-        android:minHeight="125dp">
+        android:background="@color/secondary"
+        android:paddingTop="@dimen/card_margin"
+        android:minHeight="@dimen/daily_verse_card_height">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/daily_verse_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp"
+        android:layout_margin="@dimen/card_margin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
        app:layout_constraintBottom_toBottomOf="parent">
@@ -43,10 +42,8 @@
             android:id="@+id/daily_verse_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/lora_regular"
-            android:text="\t\t\t\t\tNoi răsturnăm izvodirile minții și orice înălțime care se ridică împotriva cunoștinței lui Dumnezeu, și orice gând îl facem rob ascultării de Hristos."
-            android:textColor="@color/text_color"
-            android:textSize="@dimen/daily_verse_text_size"
+            style="@style/DailyVerseTextStyle"
+            android:textStyle="normal"
             app:layout_constraintBottom_toTopOf="@id/daily_verse_reference"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -56,11 +53,7 @@
             android:id="@+id/daily_verse_reference"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/lora_regular"
-            android:text="2 Corinteni 10:5"
-            android:textColor="@color/text_color"
-            android:textSize="@dimen/daily_verse_text_size"
-            android:textStyle="bold"
+            style="@style/DailyVerseTextStyle"
             android:layout_marginTop="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

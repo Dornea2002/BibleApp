@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">bibleApp</string>
+    <string name="music_card_title">Today\'s Music Hit</string>
+    <string name="sermon_card_title">A Word from God</string>
 </resources>
